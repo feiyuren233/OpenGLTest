@@ -10,6 +10,7 @@ RM := rm -rf
 -include sources.mk
 -include Utility/cpp/subdir.mk
 -include Source/subdir.mk
+-include Game/subdir.mk
 -include subdir.mk
 -include objects.mk
 
