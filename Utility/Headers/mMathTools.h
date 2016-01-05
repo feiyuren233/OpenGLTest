@@ -53,7 +53,7 @@ public:
 		Matrix<dimr, dimc, T> result;
 		for (int i = 0; i < dimR; i++) {
 			for (int j = 0; j < other.dimC; j++) {
-				result(i,j)=0;
+				result(i, j) = 0;
 				for (int k = 0; k < dimC; k++)
 					result(i, j) += entries[i][k] * other(j, k);
 			}
@@ -84,31 +84,47 @@ public:
 	void printMatrix() {
 		for (int i = 0; i < dimr; i++) {
 			for (int j = 0; j < dimc; j++) {
-				printf("%6.3lf",entries[i][j]);
+				printf("%6.3lf", entries[i][j]);
 			}
-		printf("\n");
+			printf("\n");
 		}
 	}
 };
 typedef Matrix<3, 3, float> Matrix33f;
 typedef Matrix<4, 4, float> Matrix44f;
+typedef Matrix<4, 4, double> Matrix44d;
 
-
-template<int dim, typename T>
-class Vector {
+template<typename T>
+class Vector2 {
 private:
-	T entries[dim];
-protected:
-
+	T x, y;
 public:
-	Vector() {
-
+	Vector2() {
+		x = 0;
+		y = 0;
 	}
-	Vector(T data[dim]) {
-		for (int i = 0; i < dim; i++)
-			entries[i] = data[i];
+	Vector2(T x, T y) {
+		Vector2::x = x;
+		Vector2::y = y;
+	}
+};
 
+template<typename T>
+class Vector3: Vector2<T> {
+private:
+	T z;
+public:
+
+	Vector3() : Vector2<T>() {
+		z = 0;
+	}
+	Vector3(T x, T y, T z) :
+			Vector2<T>(x, y) {
+		Vector3::z = z;
 	}
 
 };
+
+typedef Vector3<float> Vector3f;
+
 #endif /* HEADERS_MMATHTOOLS_H_ */

@@ -6,18 +6,17 @@
  */
 #include "Transform.h"
 
-GameObjComp::Transform::Transform() : GameObjComponents(GameObjComponents::Transform){
-	x = y = z = 0;
+GameObjComp::Transform::Transform() :
+		GameObjComponents(GameObjComponents::Transform) {
+	pos = Vector3f(0, 0, 0);
 }
 
-GameObjComp::Transform::Transform(double x, double y, double z) : GameObjComponents(GameObjComponents::Transform){
-	Transform::x = x;
-	Transform::y = y;
-	Transform::z = z;
+GameObjComp::Transform::Transform(Vector3f pos) :
+		GameObjComponents(GameObjComponents::Transform) {
+	Transform::pos = pos;
 
 }
-void GameObjComp::Transform::setPosition(double x, double y, double z) {
-	Transform::x = x;
-	Transform::y = y;
-	Transform::z = z;
+void GameObjComp::Transform::setPosition(Vector3f pos) {
+	Transform::pos = pos;
+
 }

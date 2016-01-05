@@ -8,18 +8,19 @@
 #ifndef GAME_TRANSFORM_H_
 #define GAME_TRANSFORM_H_
 #include "GameObjComponents.h"
+#include "../Utility/Headers/mMathTools.h"
 
 namespace GameObjComp{
 
 class Transform : public GameObjComponents{
 private:
-	double x, y, z;
+	Vector3f pos;
 protected:
 public:
 	Transform();
-	Transform(double x, double y, double z);
+	Transform(Vector3f pos);
 
-	void setPosition(double x, double y, double z);
+	void setPosition(Vector3f pos);
 
 };
 
