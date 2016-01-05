@@ -107,6 +107,8 @@ public:
 		Vector2::x = x;
 		Vector2::y = y;
 	}
+
+
 };
 
 template<typename T>
