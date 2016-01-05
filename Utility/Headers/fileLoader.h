@@ -12,6 +12,6 @@
 
 using namespace std;
 
-const char* loadFile(char* filename);
+string loadFile(char* filename);
 
 #endif /* HEADERS_FILELOADER_H_ */

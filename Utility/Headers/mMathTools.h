@@ -107,8 +107,6 @@ public:
 		Vector2::x = x;
 		Vector2::y = y;
 	}
-
-
 };
 
 template<typename T>
@@ -124,7 +122,6 @@ public:
 			Vector2<T>(x, y) {
 		Vector3::z = z;
 	}
-
 };
 
 typedef Vector3<float> Vector3f;

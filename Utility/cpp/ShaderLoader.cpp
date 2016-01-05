@@ -14,7 +14,7 @@
 
 void loadShader(char* filePath, GLenum ShaderType, GLuint ShaderObj, GLuint ShaderProgram) {
 
-	const char* shadertext = loadFile(filePath);
+	const char* shadertext = loadFile(filePath).c_str();
 
 	std::cout << shadertext << endl;
 	int len = strlen(shadertext);

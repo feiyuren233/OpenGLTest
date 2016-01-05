@@ -8,7 +8,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-const char* loadFile(char* filename) {
+string loadFile(char* filename) {
 	string str, line;
 	ifstream file(filename);
 	while(!file.eof()){
@@ -17,6 +17,7 @@ const char* loadFile(char* filename) {
 		str += line;
 		str += '\n';
 	}
-	return str.c_str();
+	//EVIL!!!!!!!
+	return str;
 }
 
