@@ -23,7 +23,7 @@ CPP_DEPS += \
 Utility/cpp/%.o: ../Utility/cpp/%.cpp
 	@echo 'Building file: $<'
 	@echo 'Invoking: GCC C++ Compiler'
-	g++ -I/home/feiyu/devTools/assimp-3.1.1/include/assimp -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
+	g++ -I"/nfs/ug/homes-5/r/renfeiyu/OpenGLTest/assimp" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
