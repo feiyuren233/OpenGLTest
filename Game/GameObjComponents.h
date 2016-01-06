@@ -20,7 +20,7 @@ protected:
 	GameObjComponents();
 	GameObjComponents(ComponentType type);
 public:
-	virtual ~GameObjComponents() = 0;
+	virtual ~GameObjComponents();
 };
 
 

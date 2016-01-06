@@ -6,8 +6,10 @@
  */
 #include "GameObj.h"
 
-GameObj::GameObj(){}
+GameObj::GameObj() : tranSlot(NULL), rotSlot(NULL){}
+
 void GameObj::onUpdate(){}
+
 GameObj::~GameObj(){}
 
 

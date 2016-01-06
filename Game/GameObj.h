@@ -8,9 +8,17 @@
 #ifndef GAME_GAMEOBJ_H_
 #define GAME_GAMEOBJ_H_
 
+#include <vector>
+
 #include "GameObjComponents.h"
+#include "Transform.h"
+#include "Rotation.h"
+
 class GameObj{
 private:
+	GameObjComp::Transform *tranSlot;
+	GameObjComp::Rotation *rotSlot;
+	std::vector<GameObjComponents> gameobjs;
 protected:
 public:
 	GameObj();

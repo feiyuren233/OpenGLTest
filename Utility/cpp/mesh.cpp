@@ -17,7 +17,7 @@
 */
 
 #include "../Headers/mesh.h"
-
+/*
 Mesh::MeshEntry::MeshEntry()
 {
     VB = INVALID_OGL_VALUE;
@@ -219,4 +219,4 @@ void Mesh::Render()
     glDisableVertexAttribArray(1);
     glDisableVertexAttribArray(2);
 }
-
+*/
