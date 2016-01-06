@@ -9,6 +9,7 @@
 
 #include<string.h>
 #include <GL/freeglut.h>
+
 #include "../Headers/ShaderLoader.h"
 #include "../Headers/fileLoader.h"
 

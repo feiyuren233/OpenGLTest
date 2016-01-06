@@ -46,6 +46,7 @@
 							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug.402897504" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug">
 								<option id="gnu.cpp.link.option.libs.2003354233" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" valueType="libs">
 									<listOptionValue builtIn="false" value="X11"/>
+									<listOptionValue builtIn="false" value="Magick++-7.Q16HDRI"/>
 									<listOptionValue builtIn="false" value="GLEW"/>
 									<listOptionValue builtIn="false" value="assimp"/>
 									<listOptionValue builtIn="false" value="glut"/>
@@ -55,6 +56,7 @@
 								<option id="gnu.cpp.link.option.paths.1374562449" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" valueType="libPaths">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/library}&quot;"/>
 								</option>
+								<option id="gnu.cpp.link.option.flags.1822903389" name="Linker flags" superClass="gnu.cpp.link.option.flags" value="-Wl,-rpath=library" valueType="string"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.2017588641" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
@@ -152,10 +154,10 @@
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 	<storageModule moduleId="refreshScope" versionNumber="2">
-		<configuration configurationName="Release">
+		<configuration configurationName="Debug">
 			<resource resourceType="PROJECT" workspacePath="/OpenGL test"/>
 		</configuration>
-		<configuration configurationName="Debug">
+		<configuration configurationName="Release">
 			<resource resourceType="PROJECT" workspacePath="/OpenGL test"/>
 		</configuration>
 	</storageModule>

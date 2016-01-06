@@ -10,6 +10,4 @@
 
 void loadShader(char* filePath, GLenum ShaderType, GLuint ShaderObj, GLuint ShaderProgram);
 
-
-
 #endif /* HEADERS_SHADERLOADER_H_ */
