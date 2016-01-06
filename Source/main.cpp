@@ -14,8 +14,6 @@
 #include<GL/glx.h>
 #include<GL/glu.h>
 
-
-
 #include <cassert>
 
 #include<string.h>
@@ -51,6 +49,7 @@ int main(int argc, char** argv) {
 	glutInitWindowSize(1024, 768);
 	glutInitWindowPosition(100, 100);
 	glutCreateWindow("Tutorial");
+	glutCreateSubWindow(0, 0, 0, 100, 100);
 
 	glClearColor(0.0f, 0.0f, 0.5f, 0.0f);
 

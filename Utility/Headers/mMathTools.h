@@ -125,5 +125,6 @@ public:
 };
 
 typedef Vector3<float> Vector3f;
+typedef Vector2<float> Vector2f;
 
 #endif /* HEADERS_MMATHTOOLS_H_ */

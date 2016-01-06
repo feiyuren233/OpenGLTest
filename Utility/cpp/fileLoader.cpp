@@ -17,7 +17,6 @@ string loadFile(char* filename) {
 		str += line;
 		str += '\n';
 	}
-	//EVIL!!!!!!!
 	return str;
 }
 

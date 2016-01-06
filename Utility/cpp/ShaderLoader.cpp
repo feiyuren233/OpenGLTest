@@ -14,12 +14,12 @@
 
 void loadShader(char* filePath, GLenum ShaderType, GLuint ShaderObj, GLuint ShaderProgram) {
 
-	const char* shadertext = loadFile(filePath).c_str();
-
+	string shadertext = loadFile(filePath);
+	const char* ttt= shadertext.c_str();
 	std::cout << shadertext << endl;
-	int len = strlen(shadertext);
+	int len = shadertext.length();
 
-	glShaderSource(ShaderObj, 1, &shadertext, &len);
+	glShaderSource(ShaderObj, 1, &ttt, &len);
 	glCompileShader(ShaderObj);
 
 	GLint success;
