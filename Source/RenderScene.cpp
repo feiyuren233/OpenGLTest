@@ -13,7 +13,7 @@ void RenderScene() {
 	static float Scale = 0.0f;
 	Matrix44f mat44;
 
-	Scale += 0.001f;
+	Scale += 0.01f;
 	mat44(0,0)=cosf(Scale);
 	mat44(0,1)=0;
 	mat44(0,2)=-sinf(Scale);

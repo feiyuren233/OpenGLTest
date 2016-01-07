@@ -1,18 +1,18 @@
 Source/RenderScene.o: ../Source/RenderScene.cpp \
- /home/feiyu/workspace/OpenGLtest/Includes/GL/glew.h \
- /home/feiyu/workspace/OpenGLtest/Includes/GL/freeglut.h \
- /home/feiyu/workspace/OpenGLtest/Includes/GL/freeglut_std.h \
- /home/feiyu/workspace/OpenGLtest/Includes/GL/freeglut_ext.h \
+ /nfs/ug/homes-5/r/renfeiyu/OpenGLTest/Includes/GL/glew.h \
+ /nfs/ug/homes-5/r/renfeiyu/OpenGLTest/Includes/GL/freeglut.h \
+ /nfs/ug/homes-5/r/renfeiyu/OpenGLTest/Includes/GL/freeglut_std.h \
+ /nfs/ug/homes-5/r/renfeiyu/OpenGLTest/Includes/GL/freeglut_ext.h \
  ../Source/../Includes/SharedVariables.h \
  ../Source/../Utility/Headers/mMathTools.h
 
-/home/feiyu/workspace/OpenGLtest/Includes/GL/glew.h:
+/nfs/ug/homes-5/r/renfeiyu/OpenGLTest/Includes/GL/glew.h:
 
-/home/feiyu/workspace/OpenGLtest/Includes/GL/freeglut.h:
+/nfs/ug/homes-5/r/renfeiyu/OpenGLTest/Includes/GL/freeglut.h:
 
-/home/feiyu/workspace/OpenGLtest/Includes/GL/freeglut_std.h:
+/nfs/ug/homes-5/r/renfeiyu/OpenGLTest/Includes/GL/freeglut_std.h:
 
-/home/feiyu/workspace/OpenGLtest/Includes/GL/freeglut_ext.h:
+/nfs/ug/homes-5/r/renfeiyu/OpenGLTest/Includes/GL/freeglut_ext.h:
 
 ../Source/../Includes/SharedVariables.h:
 
