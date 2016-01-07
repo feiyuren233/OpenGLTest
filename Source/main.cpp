@@ -31,11 +31,7 @@ GLuint IBO;
 GLuint gWorldLocation;
 
 const GLfloat g_vertex_buffer_data[] = { -1.0f, -1.0f, 0.0f, 0, -1, 1, 1.0f, -1.0f, 0.0f, 0.0f, 1.0f, 0.0f };
-unsigned int Indices[] = { 0, 3, 1,
-                               1, 3, 2,
-                               2, 3, 0,
-                               0, 1, 2 };
-
+unsigned int Indices[] = { 0, 3, 1, 1, 3, 2, 2, 3, 0, 0, 1, 2 };
 
 extern void RenderScene();
 
@@ -60,7 +56,7 @@ int main(int argc, char** argv) {
 
 	glGenBuffers(1, &VBO);
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(float)*9, g_vertex_buffer_data, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * 9, g_vertex_buffer_data, GL_STATIC_DRAW);
 	glGenBuffers(1, &IBO);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, IBO);
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(Indices), Indices, GL_STATIC_DRAW);
@@ -78,7 +74,7 @@ int main(int argc, char** argv) {
 
 	glLinkProgram(ShaderProgram);
 
-	std::cout<<glGetAttribLocation(ShaderProgram, "Position")<<std::endl;
+	std::cout << glGetAttribLocation(ShaderProgram, "Position") << std::endl;
 
 	GLint success;
 	GLchar ErrorLog[1024];
@@ -91,12 +87,8 @@ int main(int argc, char** argv) {
 	glValidateProgram(ShaderProgram);
 	glUseProgram(ShaderProgram);
 
-
-
 	GLuint gWorldLocation = glGetUniformLocation(ShaderProgram, "gWorld");
 	assert(gWorldLocation != 0xFFFFFFFF);
-
-
 
 	glutDisplayFunc(RenderScene);
 	glutIdleFunc(RenderScene);

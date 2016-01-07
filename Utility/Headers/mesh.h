@@ -29,6 +29,11 @@
 #include "Texture.h"
 #include "../Utility/Headers/mMathTools.h"
 
+#define INVALID_UNIFORM_LOCATION 0xffffffff
+#define INVALID_OGL_VALUE 0xffffffff
+
+#define SAFE_DELETE(p) if (p) { delete p; p = NULL; }
+
 struct Vertex
 {
     Vector3f m_pos;
