@@ -31,7 +31,6 @@ void RenderScene() {
 	mat44(3,2)=0;
 	mat44(3,3)=1;
 
-
 	glUniformMatrix4fv(gWorldLocation, 1, GL_TRUE, &mat44(0,0));
 
 	glEnableVertexAttribArray(0);

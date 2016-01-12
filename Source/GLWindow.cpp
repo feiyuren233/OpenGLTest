@@ -9,7 +9,10 @@
 
 GLWindow::GLWindow(const char* winName, int winX, int winY, int winWidth, int winHeight, bool fullScreen) {
 	// TODO Auto-generated constructor stub
-	DisplayFunc = IdleFunc = ResizeFunc = RePositionFunc = NULL;
+	DisplayFunc = NULL;
+	IdleFunc = NULL;
+	ResizeFunc = NULL;
+	RePositionFunc = NULL;
 	GLWindow::fullScreen = fullScreen;
 	GLWindow::winX = winX;
 	GLWindow::winY = winY;
@@ -26,10 +29,10 @@ void GLWindow::RegDisplayFunc(void (*DisplayFunc)()) {
 void GLWindow::RegIdleFunc(void (*IdleFunc)()) {
 	GLWindow::IdleFunc = IdleFunc;
 }
-void GLWindow::RegResizeFunc(void (*ResizeFunc)()) {
+void GLWindow::RegResizeFunc(void (*)(int, int)) {
 	GLWindow::ResizeFunc = ResizeFunc;
 }
-void GLWindow::RegRePositionFunc(void (*RePositionFunc)()) {
+void GLWindow::RegRePositionFunc(void (*RePositionFunc)(int, int)) {
 	GLWindow::RePositionFunc = RePositionFunc;
 }
 GLWindow::~GLWindow() {
@@ -41,6 +44,12 @@ void GLWindow::initWindow() {
 	glutInitWindowSize(winWidth, winHeight);
 	glutInitWindowPosition(winX, winY);
 	winID = glutCreateWindow(winName.c_str());
-
+	glutSetWindow(winID);
+	if (fullScreen)
+		glutFullScreen();
+	glutDisplayFunc(DisplayFunc);
+	glutIdleFunc(IdleFunc);
+	glutReshapeFunc(ResizeFunc);
+	glutPositionFunc(RePositionFunc);
 }
 

@@ -30,8 +30,8 @@ class GLWindow {
 private:
 	void (*DisplayFunc)();
 	void (*IdleFunc)();
-	void (*ResizeFunc)();
-	void (*RePositionFunc)();
+	void (*ResizeFunc)(int, int);
+	void (*RePositionFunc)(int, int);
 
 	int winID;
 	int winWidth, winHeight;
@@ -44,8 +44,8 @@ protected:
 public:
 	void RegDisplayFunc(void (*DisplayFunc)());
 	void RegIdleFunc(void (*IdleFunc)());
-	void RegResizeFunc(void (*ResizeFunc)());
-	void RegRePositionFunc(void (*RePositionFunc)());
+	void RegResizeFunc(void (*ResizeFunc)(int, int));
+	void RegRePositionFunc(void (*RePositionFunc)(int, int));
 
 	GLWindow createSubWindow();
 	void initWindow();

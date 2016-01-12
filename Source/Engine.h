@@ -24,21 +24,27 @@
 #include "../Game/GameObj.h"
 #include "GLWindow.h"
 
+#include <time.h>
+
 
 class Engine {
 private:
 	int argc;
 	char** argv;
 	unsigned int displayMode ;
-	//int winWidth, winHeight;
-	//std::string winName;
+	GLWindow *window;
 
 	std::vector<GameObj> gameObjs;
+
+	struct timespec startTime;
+	struct timespec prevTime;
+	struct timespec curTime;
 protected:
 
 public:
 	//if fullScreen == true, wWidth and wHeight will be ignored, winWidth, winHeight will represent real screen width & height
 	Engine(int argc, char** argv, unsigned int displayMode, GLWindow *window);
+	bool Initilize() throw(const char*);
 	void setAttr(unsigned int attr);
 	bool readAttr(unsigned int attr);
 	bool Start();
@@ -46,17 +52,6 @@ public:
 	virtual ~Engine();
 
 	double calcFPS();
-
-public:
-	struct CallBacks{
-
-		void (*DisplayFunc)();
-		void (*IdleFunc)();
-		void (*ResizeFunc)();
-		void (*RePositionFunc)();
-
-	};
-
 
 };
 
