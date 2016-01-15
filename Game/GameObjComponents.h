@@ -11,8 +11,9 @@
 
 
 class GameObjComponents{
-protected:
-	enum ComponentType{meshRenderer, Transform, Rotation, Collider, PhysicsAttr};
+public:
+	enum ComponentType{meshRenderer, Transform, Rotation, Collider, PhysicsAttr, Sprite};
+
 private:
 	ComponentType type;
 
@@ -21,6 +22,10 @@ protected:
 	GameObjComponents(ComponentType type);
 public:
 	virtual ~GameObjComponents();
+
+	ComponentType getType() const {
+		return type;
+	}
 };
 
 

@@ -17,7 +17,7 @@ private:
 protected:
 
 public:
-	meshRenderer();
+	meshRenderer(Mesh* mesh);
 	void Render();
 	virtual ~meshRenderer();
 };

@@ -38,7 +38,7 @@ bool Engine::Initilize() throw(const char*) {
 	glutInit(&argc, argv);
 	window->initWindow();
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | displayMode);
-	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+	glClearColor(0.0f, 0.0f, 0.5f, 0.0f);
 	try {
 		if (glewInit() != GLEW_OK) {
 			//fprintf(stderr, "Failed to initialize GLEW\n");
@@ -51,6 +51,11 @@ bool Engine::Initilize() throw(const char*) {
 
 	return true;
 
+}
+
+bool Engine::Stop() {
+	glutExit();
+	return true;
 }
 
 double Engine::calcFPS() {

@@ -17,6 +17,7 @@
 */
 
 #include "../Headers/mesh.h"
+#include <iostream>
 
 Mesh::MeshEntry::MeshEntry()
 {
@@ -96,6 +97,9 @@ bool Mesh::InitFromScene(const aiScene* pScene, const std::string& Filename)
 {  
     m_Entries.resize(pScene->mNumMeshes);
     m_Textures.resize(pScene->mNumMaterials);
+
+
+
 
     // Initialize the meshes in the scene one by one
     for (unsigned int i = 0 ; i < m_Entries.size() ; i++) {
@@ -184,7 +188,7 @@ bool Mesh::InitMaterials(const aiScene* pScene, const std::string& Filename)
         // Load a white texture in case the model does not include its own texture
         if (!m_Textures[i]) {
             m_Textures[i] = new Texture(GL_TEXTURE_2D, "../Content/white.png");
-
+            std::cout<<"White texture loaded"<<std::endl;
             Ret = m_Textures[i]->Load();
         }
     }

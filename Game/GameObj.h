@@ -13,23 +13,32 @@
 #include "GameObjComponents.h"
 #include "Transform.h"
 #include "Rotation.h"
+#include "Sprite.h"
+#include "meshRenderer.h"
 
-class GameObj{
+class GameObj {
 private:
 	GameObjComp::Transform *tranSlot;
 	GameObjComp::Rotation *rotSlot;
-	std::vector<GameObjComponents> gameobjs;
+	Sprite *spriteSlot;
+	std::vector<meshRenderer*> mesh;
 protected:
 public:
 	GameObj();
+
+	const GameObjComp::Rotation* getRotSlot() {
+		return rotSlot;
+	}
+
+	const GameObjComp::Transform* getTranSlot() {
+		return tranSlot;
+	}
+
 	virtual ~GameObj();
 	virtual void onUpdate();
 
 	void addObj(GameObjComponents *component);
 
 };
-
-
-
 
 #endif /* GAME_GAMEOBJ_H_ */

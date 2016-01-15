@@ -50,7 +50,7 @@ namespace Magick
 
     // Construct Geometry from specified dimensions
     Geometry(size_t width_,size_t height_,::ssize_t xOff_=0,
-      ::ssize_t yOff_=0);
+      ::ssize_t yOff_=0,bool xNegative_=false,bool yNegative_=false);
 
     // Destructor
     ~Geometry(void);
@@ -62,7 +62,7 @@ namespace Magick
     Geometry& operator=(const Geometry& Geometry_);
 
     // Set via geometry string
-    const Geometry& operator=(const std::string &geometry_);
+    const Geometry& operator=(const std::string &geometry_ );
 
     // Return geometry string
     operator std::string() const;
@@ -103,9 +103,17 @@ namespace Magick
     void width(size_t width_);
     size_t width(void) const;
 
+    // Sign of X offset negative? (X origin at right)
+    void xNegative(bool xNegative_);
+    bool xNegative(void) const;
+
     // X offset from origin
     void xOff(::ssize_t xOff_);
     ::ssize_t xOff(void) const;
+
+    // Sign of Y offset negative? (Y origin at bottom)
+    void yNegative(bool yNegative_);
+    bool yNegative(void) const;
 
     // Y offset from origin
     void yOff(::ssize_t yOff_);
@@ -129,6 +137,8 @@ namespace Magick
     size_t _height;
     ::ssize_t _xOff;
     ::ssize_t _yOff;
+    bool _xNegative;
+    bool _yNegative;
     bool _isValid;
     bool _percent;     // Interpret width & height as percentages (%)
     bool _aspect;      // Force exact size (!)
@@ -194,68 +204,141 @@ namespace Magick
     ssize_t _x;
     ssize_t _y;
   };
-
-  class MagickPPExport Point;
-
-  // Compare two Point objects
-  MagickPPExport int operator ==
-    (const Magick::Point& left_,const Magick::Point& right_);
-  MagickPPExport int operator !=
-    (const Magick::Point& left_,const Magick::Point& right_);
-
-  class MagickPPExport Point
-  {
-  public:
-
-    // Default constructor
-    Point();
-
-    // Construct Point from specified string
-    Point(const char *point_);
-
-    // Copy constructor
-    Point(const Point &point_);
-
-    // Construct Point from specified string
-    Point(const std::string &point_);
-
-    // Construct Point from specified x and y
-    Point(double x_,double y_);
-
-    // Construct Point from specified x y
-    Point(double xy_);
-
-    // Destructor
-    ~Point(void);
-
-    // Set via point string
-    const Point& operator=(const char *point_);
-
-    // Set via double value
-    const Point& operator=(double xy_);
-
-    // Assignment operator
-    Point& operator=(const Point& point_);
-
-    // Set via point string
-    const Point& operator=(const std::string &point_);
-
-    // Return point string
-    operator std::string() const;
-
-    // Does object contain valid point?
-    bool isValid() const;
-
-    // X offset from origin
-    double x(void) const;
-
-    // Y offset from origin
-    double y(void) const;
-
-  private:
-    double _x;
-    double _y;
-  };
 } // namespace Magick
+
+//
+// Inlines
+//
+
+inline void Magick::Geometry::aspect(bool aspect_)
+{
+  _aspect=aspect_;
+}
+
+inline bool Magick::Geometry::aspect(void) const
+{
+  return(_aspect);
+}
+
+inline void Magick::Geometry::fillArea(bool fillArea_)
+{
+  _fillArea=fillArea_;
+}
+
+inline bool Magick::Geometry::fillArea(void) const
+{
+  return(_fillArea);
+}
+
+inline void Magick::Geometry::greater(bool greater_)
+{
+  _greater=greater_;
+}
+
+inline bool Magick::Geometry::greater(void) const
+{
+  return(_greater);
+}
+
+inline void Magick::Geometry::height(size_t height_)
+{
+  _height=height_;
+}
+
+inline size_t Magick::Geometry::height(void) const
+{
+  return(_height);
+}
+
+inline void Magick::Geometry::isValid(bool isValid_)
+{
+  _isValid=isValid_;
+}
+
+inline bool Magick::Geometry::isValid(void) const
+{
+  return(_isValid);
+}
+
+inline void Magick::Geometry::less(bool less_)
+{
+  _less=less_;
+}
+
+inline bool Magick::Geometry::less(void) const
+{
+  return(_less);
+}
+
+inline void Magick::Geometry::limitPixels(bool limitPixels_)
+{
+  _limitPixels=limitPixels_;
+}
+
+inline bool Magick::Geometry::limitPixels(void) const
+{
+  return(_limitPixels);
+}
+
+inline void Magick::Geometry::width(size_t width_)
+{
+  _width=width_;
+  isValid(true);
+}
+
+inline void Magick::Geometry::percent(bool percent_)
+{
+  _percent = percent_;
+}
+
+inline bool Magick::Geometry::percent(void) const
+{
+  return(_percent);
+}
+
+inline size_t Magick::Geometry::width(void) const
+{
+  return(_width);
+}
+
+inline void Magick::Geometry::xNegative(bool xNegative_)
+{
+  _xNegative=xNegative_;
+}
+
+inline bool Magick::Geometry::xNegative(void) const
+{
+  return(_xNegative);
+}
+
+inline void Magick::Geometry::xOff(::ssize_t xOff_)
+{
+  _xOff=xOff_;
+}
+
+inline ::ssize_t Magick::Geometry::xOff(void) const
+{
+  return(_xOff);
+}
+
+inline void Magick::Geometry::yNegative(bool yNegative_)
+{
+  _yNegative=yNegative_;
+}
+
+inline bool Magick::Geometry::yNegative(void) const
+{
+  return(_yNegative);
+}
+
+inline void Magick::Geometry::yOff(::ssize_t yOff_)
+{
+  _yOff=yOff_;
+}
+
+inline ::ssize_t Magick::Geometry::yOff(void) const
+{
+  return(_yOff);
+}
 
 #endif // Magick_Geometry_header

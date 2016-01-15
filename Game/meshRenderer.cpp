@@ -7,9 +7,14 @@
 #include <stdlib.h>
 #include "meshRenderer.h"
 
-meshRenderer::meshRenderer() : mesh(NULL), GameObjComponents(GameObjComponents::meshRenderer){
+meshRenderer::meshRenderer(Mesh *mesh) : GameObjComponents(GameObjComponents::meshRenderer){
 	// TODO Auto-generated constructor stub
+	meshRenderer::mesh = mesh;
 
+}
+
+void meshRenderer::Render() {
+	mesh->Render();
 }
 
 meshRenderer::~meshRenderer() {

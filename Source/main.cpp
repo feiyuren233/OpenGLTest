@@ -23,6 +23,7 @@
 #include "../Utility/Headers/fileLoader.h"
 #include "../Utility/Headers/ShaderLoader.h"
 #include "Engine.h"
+#include "Magick++.h"
 
 using namespace std;
 
@@ -37,10 +38,41 @@ unsigned int Indices[] = { 0, 3, 1, 1, 3, 2, 2, 3, 0, 0, 1, 2 };
 extern void RenderScene();
 
 int main(int argc, char** argv) {
+	Magick::InitializeMagick(argv[0]);
 	GLWindow *win = new GLWindow("tut", 100, 100, 1024, 960, false);
 	win->RegDisplayFunc(RenderScene);
 	Engine *eng = new Engine(argc, argv, 0, win);
 	eng->Initilize();
+
+	GLuint ShaderProgram = glCreateProgram();
+	GLuint ShaderObj = glCreateShader(GL_VERTEX_SHADER);
+	GLuint ShaderObj2 = glCreateShader(GL_FRAGMENT_SHADER);
+
+	loadShader("./Shaders/Fragment.fs", GL_FRAGMENT_SHADER, ShaderObj2, ShaderProgram);
+	loadShader("./Shaders/Vertices.vs", GL_VERTEX_SHADER, ShaderObj, ShaderProgram);
+
+	glBindAttribLocation(ShaderProgram, 0, "Position");
+
+	glLinkProgram(ShaderProgram);
+
+	std::cout << glGetAttribLocation(ShaderProgram, "Position") << std::endl;
+	std::cout << glGetAttribLocation(ShaderProgram, "TexCoord") << std::endl;
+	std::cout << glGetAttribLocation(ShaderProgram, "Normal") << std::endl;
+	GLint success;
+	GLchar ErrorLog[1024];
+	glGetProgramiv(ShaderProgram, GL_LINK_STATUS, &success);
+	if (success == 0) {
+		glGetProgramInfoLog(ShaderProgram, sizeof(ErrorLog), NULL, ErrorLog);
+		fprintf(stderr, "Error linking shader program: '%s'\n", ErrorLog);
+	} else
+		std::cout << "Linking shader program success" << endl;
+	glValidateProgram(ShaderProgram);
+	glUseProgram(ShaderProgram);
+
+	GLuint gWorldLocation = glGetUniformLocation(ShaderProgram, "gWorld");
+	assert(gWorldLocation != 0xFFFFFFFF);
+
+
 	eng->Start();
 	return 0;
 }
