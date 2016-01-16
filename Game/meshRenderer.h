@@ -9,7 +9,7 @@
 #define GAME_MESHRENDERER_H_
 
 #include "GameObjComponents.h"
-#include "../Utility/Headers/mesh.h"
+#include "Utility/mesh.h"
 
 class meshRenderer: public GameObjComponents {
 private:

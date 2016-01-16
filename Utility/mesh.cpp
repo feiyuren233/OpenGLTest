@@ -16,7 +16,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "../Headers/mesh.h"
+#include "Utility/mesh.h"
 #include <iostream>
 
 Mesh::MeshEntry::MeshEntry()

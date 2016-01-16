@@ -8,7 +8,7 @@
 #ifndef GAME_TRANSFORM_H_
 #define GAME_TRANSFORM_H_
 #include "GameObjComponents.h"
-#include "../Utility/Headers/mMathTools.h"
+#include "Utility/mMathTools.h"
 
 namespace GameObjComp{
 

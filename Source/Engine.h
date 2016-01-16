@@ -24,7 +24,7 @@
 #include "../Game/GameObj.h"
 #include "GLWindow.h"
 
-#include <time.h>
+#include "Platform/SysUtil.h"
 
 
 class Engine {

@@ -17,7 +17,7 @@
 */
 
 #include <iostream>
-#include "../Headers/Texture.h"
+#include "Utility/Texture.h"
 
 Texture::Texture(GLenum TextureTarget, const std::string& FileName)
 {

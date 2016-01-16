@@ -19,9 +19,9 @@
 #include<string.h>
 #include <GL/freeglut.h>
 
-#include "../Includes/SharedVariables.h"
-#include "../Utility/Headers/fileLoader.h"
-#include "../Utility/Headers/ShaderLoader.h"
+#include "SharedVariables.h"
+#include "Utility/fileLoader.h"
+#include "Utility/ShaderLoader.h"
 #include "Engine.h"
 #include "Magick++.h"
 
@@ -43,6 +43,7 @@ int main(int argc, char** argv) {
 	win->RegDisplayFunc(RenderScene);
 	Engine *eng = new Engine(argc, argv, 0, win);
 	eng->Initilize();
+
 
 	GLuint ShaderProgram = glCreateProgram();
 	GLuint ShaderObj = glCreateShader(GL_VERTEX_SHADER);

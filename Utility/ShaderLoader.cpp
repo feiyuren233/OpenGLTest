@@ -10,8 +10,8 @@
 #include<string.h>
 #include <GL/freeglut.h>
 
-#include "../Headers/ShaderLoader.h"
-#include "../Headers/fileLoader.h"
+#include "Utility/ShaderLoader.h"
+#include "Utility/fileLoader.h"
 
 void loadShader(char* filePath, GLenum ShaderType, GLuint ShaderObj, GLuint ShaderProgram) {
 

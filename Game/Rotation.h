@@ -7,7 +7,7 @@
 
 #ifndef GAME_ROTATION_H_
 #define GAME_ROTATION_H_
-#include "../Utility/Headers/mMathTools.h"
+#include "Utility/mMathTools.h"
 #include "GameObjComponents.h"
 
 namespace GameObjComp{

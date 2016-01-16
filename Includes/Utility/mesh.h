@@ -27,7 +27,7 @@
 #include <assimp/postprocess.h> // Post processing flags
 
 #include "Texture.h"
-#include "../Utility/Headers/mMathTools.h"
+#include "Utility/mMathTools.h"
 
 #define INVALID_UNIFORM_LOCATION 0xffffffff
 #define INVALID_OGL_VALUE 0xffffffff

@@ -6,9 +6,9 @@
 #include <iostream>
 
 #include <math.h>
-#include "../Includes/SharedVariables.h"
-#include "../Utility/Headers/mMathTools.h"
-#include "../Utility/Headers/mesh.h"
+#include "SharedVariables.h"
+#include "Utility/mMathTools.h"
+#include "Utility/mesh.h"
 
 void RenderScene() {
 	std::cout << "entered renderscene" << std::endl;
